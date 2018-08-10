@@ -1,0 +1,17 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "Demo test suite",
+  "main": "weather.js",
+  "author": "Eugene",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "mocha": "^2.4.5",
+    "mocha-logger": "^1.0.6"
+  },
+  "scripts": {
+    "test": "mocha --timeout 10000"
+  }
+}
