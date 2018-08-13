@@ -31,7 +31,7 @@ describe('Demo tests Set', function () {
                 .get('/api/location/search/?query=San%20Francisco')
                 .end((err, res) => {
                     res.should.have.status(200);
-                    res.body.should.be.an('array');
+                    res.body.should.be.an('array').that.is.not.empty;
                     res.body[0].should.have.property('title').eql('San Francisco');
                     done();
                 });
@@ -50,7 +50,7 @@ describe('Demo tests Set', function () {
                 .get('/api/location/search/?lattlong=37.777119, -122.41964')
                 .end((err, res) => {
                     res.should.have.status(200);
-                    res.body.should.be.an('array');
+                    res.body.should.be.an('array').that.is.not.empty;
                     res.body[0].should.have.property('title').eql('San Francisco');
                     done();
                 });
@@ -98,7 +98,7 @@ describe('Demo tests Set', function () {
                 .get('/api/location/868274/2017/5/17/')
                 .end((err, res) => {
                     res.should.have.status(200);
-                    res.body.should.be.an('array');
+                    res.body.should.be.an('array').that.is.not.empty;
                     assertJSONPath(res.body,"$..[?(/2017-05-17T14:23/.test(@.created))]");
 
                     for (let i in res.body) {
